@@ -165,6 +165,7 @@ class ImagesTreatment():
                     x, y, w, h = cv2.boundingRect(cnt)
                     cropped_img = resultimage[y:y + h, x:x + w]
                     self.grain_images.append(cropped_img)
+                    # cv2.drawContours(image=self.image, contours=cnts, contourIdx=-1, color=(0, 255, 0), thickness=2, lineType=cv2.LINE_AA)
 
         show_img_with_matplotlib(labels, 'labels', 5, True, isSpectral=True)
         show_img_with_matplotlib(self.image, 'final', 6, False)

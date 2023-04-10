@@ -13,11 +13,14 @@ imgLoader.load()
 grains_imgs = []
 
 for image in imgLoader.images:
+    i = 0;
     imgTreatment = ImagesTreatment(image)
     grains_imgs += imgTreatment.final_segmentation()
     for grain in grains_imgs:
-        cv2.imshow('grain', grain)
-        cv2.waitKey(0)
+        cv2.imwrite("Grains/grain_" + str(i) + ".jpg", grain)
+        # cv2.imshow('grain', grain)
+        # cv2.waitKey(0)
+        i += 1
 
 
 
